@@ -1,14 +1,9 @@
-
-/*
-Exercise 1: Define an empty array
-
+/*Exercise 1: Define an empty array
 1) Create an empty array and assign it to a variable called `foods`.
-
 Exercise 1 has been completed for you:
 */
 
 const foods = [];  
-
 console.log('Exercise 1 result:', foods);
 
 
@@ -47,8 +42,7 @@ This syntax may seem overwhelming at first glance, but it means that all but the
 Exercise 5: Insert an element between two others
 1) Insert the string 'tofu' between 'pizza' and 'cheeseburger' in the array.
 
-Complete Exercise 5 in the space below:
-*/
+Complete Exercise 5 in the space below:*/
 
 foods.splice(2, 0, 'tofu');
 
@@ -80,7 +74,6 @@ Exercise 8: Finding an index
 Complete Exercise 8 in the space below:*/
 
 let soyIdx=foods.indexOf('tofu')
-
 console.log('Exercise 8 result:', soyIdx);
 
 /*The join() method combines all the elements of an array into a single string, separated by a specified delimiter. Find the join() docs here. A delimiter is a character or group of characters used to separate elements within a string.
@@ -165,4 +158,58 @@ console.log('Exercise 12 Results:');
 console.log('  fizz:', fizz);
 console.log('  buzz:', buzz);
 console.log('  fizzbuzz:', fizzbuzz);
+
+/*Exercise 13: Retrieve the Last Array
+1) Assign the last nested array in the `numArrays` below to a variable named
+   `numList`. As you do this, also fulfill these goals:
+   - Assume you don't know how many nested arrays `numArrays` contains.
+   - Do not alter the original `numArrays` array.
+Complete Exercise 13 in the space below:*/
+
+const numArrays = [
+	[100, 5, 23],
+	[15, 21, 72, 9],
+	[45, 66],
+	[7, 81, 90]
+];
+const numList = numArrays[numArrays.length - 1];
+console.log('Exercise 13 result:', numList);
+
+/*Exercise 14: Accessing within nested arrays
+1) Retrieve the number `66` from the `numArrays` array. As part of this process
+   do not alter the original `numArrays` array.
+2) Assign it to a variable called `num`.
+Complete Exercise 14 in the space below:*/
+
+const numArrays = [
+    [100, 5, 23],
+    [15, 21, 72, 9],
+    [45, 66],
+    [7, 81, 90]
+];
+let r = -1
+let c=-1
+for (let i = 0; i < numArrays.length; i++) {
+    const j = numArrays[i].indexOf(66);
+    if (j !== -1) {
+        r = i;
+        c=j;
+    }
+}
+const numList = numArrays[r][c];
+console.log('Exercise 13 result:', numList);
+
+/*Exercise 15: Nested array sum
+1) Use nested loops or `forEach()` methods to sum up all numbers within 
+   `numArrays` nested arrays.  
+2) Assign the sum to a variable called `total`.
+Hint: Be sure to declare and initialize the total variable before the iterations.
+Complete Exercise 15 in the space below:*/
+
+let total = 0;
+numArrays.forEach(i => {
+	i.forEach(element => total += element)
+});
+
+console.log('Exercise 15 result:\n', total);
 
